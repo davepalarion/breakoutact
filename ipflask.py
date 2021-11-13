@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 
 
-@app.route('/')
+@app.route('/', methods = ['GET', 'POST'])
 def Index():
     search = request.form.get('search') 
     data = ipapi.location(ip=search, output='json')
